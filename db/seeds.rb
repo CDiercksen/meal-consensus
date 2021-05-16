@@ -19,7 +19,8 @@ end
 
 3.times do
     Trip.create(
-        
+        name: Faker::Address.city
+
     )
 end
 
