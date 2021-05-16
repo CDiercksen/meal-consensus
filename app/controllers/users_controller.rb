@@ -7,7 +7,19 @@ class UsersController < ApplicationController
         @user = User.find_by_id(params[:id])
     end
 
-    def find_user
-       
+    def new
+        @user = User.new 
+    end
+
+    def create
+        
+    end
+
+    def edit
+
+    end
+
+    def update
+
     end
 end
