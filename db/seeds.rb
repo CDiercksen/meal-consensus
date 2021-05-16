@@ -8,7 +8,12 @@
 User.destroy_all
 
 10.times do
-    User.create(name: Faker::TvShows::StarTrek.character, username: Faker::TvShows::AquaTeenHungerForce.character, email: Faker::Internet.safe_email, celiac: nil, adventurous: nil)
+    User.create(
+        name: Faker::TvShows::StarTrek.character, 
+        username: Faker::TvShows::AquaTeenHungerForce.character, 
+        email: Faker::Internet.safe_email, 
+        celiac: random_boolean = [true, false].sample, 
+        adventurous: random_boolean = [true, false].sample)
 end
 
 puts "
