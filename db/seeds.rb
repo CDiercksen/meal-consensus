@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Trip.destroy_all
+Destination.destroy_all
 
 10.times do
     User.create(
@@ -19,8 +20,14 @@ end
 
 3.times do
     Trip.create(
-        name: Faker::Address.city
+        name: Faker::Marketing.buzzwords
 
+    )
+end
+
+3.times do
+    Destination.create(
+        name: Faker::Address.city
     )
 end
 
