@@ -8,6 +8,7 @@
 User.destroy_all
 Trip.destroy_all
 Destination.destroy_all
+Restaurant.destroy_all
 
 10.times do
     User.create(
@@ -28,6 +29,16 @@ end
 3.times do
     Destination.create(
         name: Faker::Address.city
+    )
+end
+
+10.times do
+    Restaurant.create(
+        name: Faker::Restaurant.name, 
+        cuisine: Faker::Nation.nationality, 
+        dining_experience: ["casual", "fast casual", "fancy"].sample, 
+        celiac: random_boolean = [true, false].sample, 
+        adventurous: random_boolean = [true, false].sample
     )
 end
 
