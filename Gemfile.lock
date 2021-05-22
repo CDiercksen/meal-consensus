@@ -263,6 +263,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  dotenv
   dotenv-rails
   faker!
   jbuilder (~> 2.7)
