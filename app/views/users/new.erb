@@ -1,1 +1,38 @@
 <h1> Make a new user</h1>
+
+<br>
+
+    <% if @user.errors.any? %>
+
+        <% @user.errors.full_messages.each do |error| %>
+        
+            <h4><%= error %></h4>
+
+        <% end %>
+
+    <% end %>
+
+<br>
+
+
+<%= form_with model: @user do |f| %>
+
+
+        <%= f.label :name, "What's Your Name? 😄:" %>
+        <%= f.text_field :name %><br>
+
+        <%= f.label :username %>
+        <%= f.text_field :username %><br>
+
+        <!--  Password : *** PASSWORD_FIELD?? ***  -->
+        <%= f.label :password, "Password" %>
+        <%= f.password_field :password %><br>
+
+
+        <br><br>
+
+        <%= f.submit "Signup! 💁💫✨" %>
+            <!--  <%= f.submit "YOU DON'T NEED ANOTHER SUBMIT BUTTON HOMIE 🙌🏾" %>  -->
+        
+
+<% end %>
