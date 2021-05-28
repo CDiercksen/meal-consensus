@@ -1,5 +1,22 @@
 class SessionsController < ApplicationController
     #logging a user in/out, omniauth
+    
+    #Team Form Getter
+    def new 
+
+    end
+    #Team form Getter
+    def login 
+    end
+
+    def create #creating a session
+
+    end
+
+    def destroy 
+
+    end
+
     def omniauth
     user = User.create_from_omniauth(auth)
         if user.valid?
