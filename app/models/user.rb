@@ -10,4 +10,5 @@ class User < ApplicationRecord
             u.password = SecureRandom.hex(16)
         end
     end
+    validates :username, presence: true, uniqueness: true 
 end

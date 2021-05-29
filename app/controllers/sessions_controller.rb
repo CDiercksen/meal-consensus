@@ -11,6 +11,17 @@ class SessionsController < ApplicationController
 
     def create #creating a session
 
+        @user = User.find_by(username: params[:username])
+        #  @user = User.find_by(email: params[:email])
+        
+        #binding.pry            
+        if  @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id
+            #binding.pry  #  Final Check!! 👀
+            redirect_to user_path(@user)
+            else
+                redirect_to login_path        #  redirect_to login_path
+        end
     end
 
     def destroy 
