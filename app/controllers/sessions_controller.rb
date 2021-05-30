@@ -9,6 +9,10 @@ class SessionsController < ApplicationController
     def login 
     end
 
+    def home
+        
+    end
+
     def create #creating a session
 
         @user = User.find_by(username: params[:username])

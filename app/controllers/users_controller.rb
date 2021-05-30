@@ -6,11 +6,11 @@ class UsersController < ApplicationController
     def show
         @user = User.find_by_id(params[:id])
     end
-
+    #loading signup form
     def new
         @user = User.new 
     end
-
+    #signup
     def create
         
         @user = User.new(user_params)

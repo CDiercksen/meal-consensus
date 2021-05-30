@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :trips
   resources :users
 
+  root 'sessions#home'
   get '/signup' => 'users#new'
 
   get '/auth/:provider/callback', to: 'sessions#omniauth'
