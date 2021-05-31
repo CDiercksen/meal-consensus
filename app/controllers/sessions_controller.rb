@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
         #binding.pry            
         if  @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            #binding.pry  #  Final Check!! 👀
+            #binding.pry 
             redirect_to user_path(@user)
             else
                 redirect_to login_path        #  redirect_to login_path
