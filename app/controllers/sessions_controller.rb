@@ -3,7 +3,8 @@ class SessionsController < ApplicationController
     
     #Team Form Getter
     def new 
-
+        @user = User.new
+        render :login
     end
     #Team form Getter
     def login 
@@ -29,7 +30,8 @@ class SessionsController < ApplicationController
     end
 
     def destroy 
-
+        session.clear
+        redirect_to '/'
     end
 
     def omniauth
