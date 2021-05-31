@@ -19,7 +19,7 @@ class UsersController < ApplicationController
         # Can Only Save If Valid
         if @user.save
             session[:user_id] = @user.id
-                #binding.pry  #  Final Check!! 👀
+                #binding.pry  #  
             redirect_to user_path(@user)    #  /user/:id
         else
             render :new
