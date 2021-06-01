@@ -1,1 +1,20 @@
 <h1> New Trip Form Goes Here!</h1>
+
+<%= form_for(@trip) do |f|%>
+    <%= f.label :name%>
+    <%= f.text_field :name%>
+
+    <br><br>
+    <%= f.label :destination_id, "Destination"%>
+    <%= f.collection_select :destination_id, Destination.all, :id, :name, prompt: true%>
+
+    <br><br>
+
+    <p> Or Create a New Destination:</p>
+        <%= f.fields_for :destination do |dest_fields|%>
+            <%= dest_fields.label :name%>
+            <%= dest_fields.text_field :name%>
+        <% end %>
+    <br><br>
+    <%= f.submit %>
+<% end %>

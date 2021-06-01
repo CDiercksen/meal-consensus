@@ -15,6 +15,7 @@ Restaurant.destroy_all
         name: Faker::TvShows::StarTrek.character, 
         username: Faker::TvShows::AquaTeenHungerForce.character, 
         email: Faker::Internet.safe_email, 
+        password: "123",
         celiac: random_boolean = [true, false].sample, 
         adventurous: random_boolean = [true, false].sample)
 end
@@ -32,15 +33,15 @@ end
     )
 end
 
-10.times do
-    Restaurant.create(
-        name: Faker::Restaurant.name, 
-        cuisine: Faker::Nation.nationality, 
-        dining_experience: ["casual", "fast casual", "fancy"].sample, 
-        celiac: random_boolean = [true, false].sample, 
-        adventurous: random_boolean = [true, false].sample
-    )
-end
+# 10.times do
+#     Restaurant.create(
+#         name: Faker::Restaurant.name, 
+#         cuisine: Faker::Nation.nationality, 
+#         dining_experience: ["casual", "fast casual", "fancy"].sample, 
+#         celiac: random_boolean = [true, false].sample, 
+#         adventurous: random_boolean = [true, false].sample
+#     )
+# end
 
 puts "
 
