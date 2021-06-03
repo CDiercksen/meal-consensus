@@ -1,0 +1,23 @@
+<h1>Login Here</h1>
+
+<%= form_with model: @user do |f| %>
+
+
+        <%= f.label :name, "What's Your Name?" %>
+        <%= f.text_field :name %><br>
+
+        <%= f.label :username %>
+        <%= f.text_field :username %><br>
+
+         <%= f.label :email %>
+        <%= f.email_field :email %><br>
+
+        <!--  Password : *** PASSWORD_FIELD?? ***  -->
+        <%= f.label :password, "Password" %>
+        <%= f.password_field :password %><br>
+         <br><br>
+
+        <%= f.submit "Login!" %>
+        
+
+<% end %>
