@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :restaurants
   resources :destinations
-  resources :trips
-  resources :users
+  resources :users do 
+    resources :trips
+  end
 
   root 'sessions#home'
   get '/signup' => 'users#new'
