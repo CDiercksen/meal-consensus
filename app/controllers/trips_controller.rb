@@ -26,6 +26,6 @@ class TripsController < ApplicationController
     end
 
     def trip_params
-        params.require(:trip).permit(:name, :user_id, :destination_id)
+        params.require(:trip).permit(:name, :user_id, :destination_id, :destination)
     end
 end

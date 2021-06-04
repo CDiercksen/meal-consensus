@@ -1,1 +1,12 @@
 <h1> Trips Go Here! </h1>
+
+<ul> 
+    <% @trips.each do |trip|    %>
+        <li><%= link_to trip.name, user_trips_path(trip) %></li>
+        
+
+
+    <% end %>
+
+
+</ul>
