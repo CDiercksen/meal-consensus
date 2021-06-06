@@ -6,6 +6,8 @@ class TripsController < ApplicationController
     def new #gets the form
         @user = current_user
         @trip = @user.trips.build
+        #@destination = Destination.new
+        Destination.new 
         # 3.times do
         #     d = @trip.destination.build
         #     d.build_destination
@@ -15,17 +17,22 @@ class TripsController < ApplicationController
     def create #posts the form
         @user = current_user
         @trip = @user.trips.build(trip_params)
+       # binding.pry
         if @trip.save
            
             # redirect_to trip_path(@trip)
             redirect_to user_trip_path(@user, @trip)
         else
-            binding.pry
+           # binding.pry
             render 'new'
         end
     end
 
+    def show
+        @trip = Trip.find_by_id(params[:id])
+    end
+
     def trip_params
-        params.require(:trip).permit(:name, :user_id, :destination_id, :destination)
+        params.require(:trip).permit(:name, :user_id, :destination_id, destination_attributes: [:name])
     end
 end
