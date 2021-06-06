@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
-    has_many :trips
-    has_many :destinations, through: :trips
+    has_many :trips, dependent: :destroy
+    has_many :destinations, through: :trips, dependent: :destroy
     #has_many :restaurants, through: :destinations
     
     def self.create_from_omniauth(auth)
