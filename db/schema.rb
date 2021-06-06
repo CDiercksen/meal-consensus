@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_05_16_015027) do
   create_table "trips", force: :cascade do |t|
     t.string "name"
     t.integer "user_id", null: false
-    t.integer "destination_id", null: false
+    t.integer "destination_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["destination_id"], name: "index_trips_on_destination_id"
