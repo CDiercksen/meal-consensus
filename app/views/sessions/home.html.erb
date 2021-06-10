@@ -1,9 +1,18 @@
-<h1> welcome!</h1>
+<h1> Welcome to Meal Consensus!</h1>
 
 <% if logged_in? %>
-    <h1>You are logged in, <%= current_user.username %></h1>
+    <h3>You are logged in, <%= current_user.username %></h3>
+    <br>
+    <% if current_user.trips == nil%>
+        <%= button_to "Let's make your first trip", new_user_trip_path %>
+        <br>
+        <% else %>
+        <%= button_to "Let's go see my trips", user_trips_path(current_user.id) %>
+        <br>
+    <%end%>
 <%end%>
 
 <%= link_to "Sign up", signup_path %>
 OR
 <%= link_to "Login", login_path %>
+
