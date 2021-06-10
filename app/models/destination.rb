@@ -3,4 +3,6 @@ class Destination < ApplicationRecord
     has_many :users, through: :trips
    # has_many :restaurants
     validates :name, uniqueness: true, presence: true
+
+    scope :organize, -> { order('name') }
 end
