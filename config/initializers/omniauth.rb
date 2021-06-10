@@ -1,7 +1,7 @@
-require 'omniauth-google-oauth2'
-     require 'dotenv'
+# require 'omniauth-google-oauth2'
+    #  require 'dotenv'
 
-    Dotenv.load
+    # Dotenv.load
 
 Rails.application.config.middleware.use OmniAuth::Builder do
     provider :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
