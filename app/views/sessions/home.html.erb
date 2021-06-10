@@ -3,8 +3,9 @@
 <% if logged_in? %>
     <h3>You are logged in, <%= current_user.username %></h3>
     <br>
-    <% if current_user.trips == nil%>
-        <%= button_to "Let's make your first trip", new_user_trip_path %>
+    <% if !current_user.has_attribute?(:trips) %>
+    <% binding.pry %>
+        <%= button_to "Let's make your first trip", new_user_trip_path(current_user.id) %>
         <br>
         <% else %>
         <%= button_to "Let's go see my trips", user_trips_path(current_user.id) %>
