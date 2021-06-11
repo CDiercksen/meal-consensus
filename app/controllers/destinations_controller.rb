@@ -1,11 +1,11 @@
 class DestinationsController < ApplicationController
     def index
         @destinations = Destination.organize
-        binding.pry
     end
-
+    
     def new
         @destination = Destination.new
+        # binding.pry
     end
 
     def create
