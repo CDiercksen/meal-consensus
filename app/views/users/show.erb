@@ -18,4 +18,16 @@
 
 <br><br>
 
+<h3> Your Trips Below </h3>
+<ul> 
+    <% @user.trips.each do |trip|    %>
+        <li><%= link_to trip.name, user_trip_path(:id) %></li>
+        
+
+
+    <% end %>
+
+
+</ul>
+<br><br><br>
 <%= link_to 'Lets plan a trip!', new_user_trip_path(@user) %>
