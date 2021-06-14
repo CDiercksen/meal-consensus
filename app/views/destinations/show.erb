@@ -1,0 +1,15 @@
+<h1> Here's all your trips scheduled for <%= @destination.name %> </h1>
+
+
+<br><br>
+<ul> 
+    <% @destination.trips.each do |trip|    %>
+        <li><%= link_to trip.name, user_trip_path(@user, trip) %></li>
+        
+
+
+    <% end %>
+
+
+</ul>
+<br><br><br>
