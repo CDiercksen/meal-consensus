@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   #to be constructed
     #get 'welcome', to: "session#welcome" 
+# get 'users/:id', to: 'users#show'
 
+# post 'user/:id', to: 'users#show'
 
 end

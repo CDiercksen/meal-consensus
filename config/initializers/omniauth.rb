@@ -1,5 +1,5 @@
-# require 'omniauth-google-oauth2'
-    #  require 'dotenv'
+require 'omniauth-google-oauth2'
+     require 'dotenv-rails'
 
     # Dotenv.load
 

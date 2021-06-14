@@ -40,10 +40,10 @@ class SessionsController < ApplicationController
     if user.valid?
         session[:user_id] = user.id
         # binding.pry
-        redirect_to 'root_path'
+        redirect_to '/'
         else
             flash[:message] = user.errors.full_messages.join(", ")
-            redirect_to 'users'
+            redirect_to '/'
         end
     end
 

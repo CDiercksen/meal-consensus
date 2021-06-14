@@ -3,11 +3,11 @@
 <% if logged_in? %>
     <h3>You are logged in, <%= current_user.username %></h3>
     <br>
-    <% if !current_user.has_attribute?(:trips) %>
-        <%= button_to "Let's make your first trip", user_path(:id) %>
+    <% if current_user.has_attribute?(:trips) %>
+        <%= link_to "Let's make your first trip", new_user_trip_path(current_user) %>
         <br>
         <% else %>
-        <%= button_to "Let's go see my trips", user_path(:id) %>
+        <%= link_to "Let's go see my trips", user_path(current_user) %>
         <br>
     <%end%>
 <%end%>

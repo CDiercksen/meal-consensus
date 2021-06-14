@@ -10,8 +10,11 @@ class DestinationsController < ApplicationController
 
     def create
         @destination = Destination.new(destination_params)
-        @destination.save
-        redirect_to destinations_path
+        if @destination.save
+            redirect_to destinations_path
+        else
+            render 'new'
+        end
     end
 
     private
@@ -19,5 +22,4 @@ class DestinationsController < ApplicationController
     def destination_params
         params.require(:destination).permit(:name)
     end
-
 end

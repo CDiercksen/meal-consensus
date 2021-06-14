@@ -21,7 +21,7 @@
 <h3> Your Trips Below </h3>
 <ul> 
     <% @user.trips.each do |trip|    %>
-        <li><%= link_to trip.name, user_trip_path(:id) %></li>
+        <li><%= link_to trip.name, user_trip_path(@user, trip) %></li>
         
 
 
