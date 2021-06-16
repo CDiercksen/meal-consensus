@@ -4,7 +4,7 @@
 <br><br>
 <ul> 
     <% @destination.trips.each do |trip|    %>
-        <li><%= link_to trip.name, user_trip_path(@user, trip) %></li>
+        <li><%= link_to trip.name, user_trip_path(trip.user, trip) %></li>
         
 
 

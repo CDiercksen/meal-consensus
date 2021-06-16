@@ -17,6 +17,11 @@ class DestinationsController < ApplicationController
         end
     end
 
+    def show
+        @destination = Destination.find_by_id(params[:id])
+        # @user = User.find_by_id(current_user)
+    end
+
     private
 
     def destination_params

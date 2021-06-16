@@ -35,6 +35,11 @@ class UsersController < ApplicationController
 
     end
 
+    def celiac
+        @users = User.where(celiac: true)
+
+    end
+
     def user_params
         params.require(:user).permit(:name, :username, :password, :email,
             :celiac, :adventurous)
